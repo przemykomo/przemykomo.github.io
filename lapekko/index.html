@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lapekko</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+            background-color: #1E222A;
+            color: white;
+            text-align: center;
+        }
+
+        p {
+            word-wrap: break-word;
+            max-width: 40vw;
+            margin: 0 auto;
+            font-size: 1.2em;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+        }
+
+        img {
+            width: 30vw;
+            height: auto;
+        }
+
+        @media only screen and (orientation: portrait) {
+            p {
+                max-width: 90vw;
+            }
+
+            img {
+                width: 90vw;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Lapekko</h1>
+        <img src="img/showcase.jpg" />
+        <img src="img/showcase2.jpg" />
+        <p>I had some spare computer parts after upgrading my PC. I decided to make a laptop out of them.
+        First I had to figure out how to power it with low voltage, which would be easy to get from a battery pack.
+        I found a LR1106 PSU that needs 11.2-12.6V. Perfect! I hooked it up to 12V from a normal ATX power supply to test it out.</p>
+        <img src="img/breadboard-firstpower.jpg" />
+        <p>Later I got a dedicated 12V PSU for further testing:</p>
+        <img src="img/12vpsu.png" />
+        <img src="img/12vpsu2.png" />
+        <p>Then I had to figure out how to get a laptop screen to work with a desktop motherboard.
+        I bought a screen and a <a href="https://www.ebay.com/itm/353098860892">controller board</a> from ebay.
+        The screen didn't light up at all, and after banging my head against a wall, I figured out that the backlight wasn't connected. So I plugged it in and saw this:</p>
+        <img src="img/broken_screen.jpg" />
+        <p>So I bought another screen and hoped for the best.</p>
+        <img src="img/working_screen.jpg" />
+        <p>I've also been experimenting with Gentoo Linux to try to reduce the power consumption, but it hasn't led to anything.</p>
+        <img src="img/gentoo.jpg" />
+        <p>Now I had to make it run on batteries.
+        I got some 18650 cells from old laptop batteries, bought a charger and borrowed capacity tester from a friend.</p>
+        <img src="img/cell_testing.jpg" />
+        <p>I bought a cheap spot welder and connected 16 of the largest capacity cells together to make a 4S4P pack.</p>
+        <img src="img/spot_welding.jpg" />
+        <img src="img/spot_welding2.jpg" />
+        <p>Then I bought a BMS and connected it to the battery pack. I also connected a thermal fuse and glued it to the battery pack with a thermal glue.
+        I'm not sure if it was necessary, but I guess extra safety can't hurt.</p>
+        <img src="img/bms.jpg" />
+        <p>I bought a <a href="https://aliexpress.com/item/1005002999307370.html">buck converter</a> to convert 13-16.8V from the battery pack to 12V to power the computer.
+        Then I run it on batteries for the first time:</p>
+        <img src="img/battery_powered.jpg" />
+        <p>Now it was the time to make an enclosure. First, I made a prototype out of cardboard to find out the right dimensions.
+        I also found an old tablet case with a USB keyboard that was small enough for this project.</p>
+        <img src="img/cardboard.jpg" />
+        <img src="img/cardboard2.jpg" />
+        <p>I also used two xiaomi vacuum robot battery cases for my battery.</p>
+        <img src="img/battery_case.jpg" />
+        <p>Then I started working on a metal case. I found out that I could make it out of two ATX power supply cases.
+        I used rivets for permanent connections and threaded rivets so I could open the case later.
+        I also salvaged a screen frame from a broken laptop.</p>
+        <img src="img/metal.jpg" />
+        <img src="img/metal2.jpg" />
+        <img src="img/metal3.jpg" />
+        <p>I also experimented with a dedicated GPU, but eventually gave up because it would make the laptop too large.</p>
+        <img src="img/gpu.jpg" />
+        <img src="img/gpu2.jpg" />
+        <p>Then I connected everything together.</p>
+        <img src="img/case.jpg" />
+        <img src="img/finished.jpg" />
+        <p>One thing that was missing was the power supply switchover (which would allow me to power the laptop from a 20V wall charger) and a built-in battery charger.
+        For this whole time I was charging the battery using a bench power supply, which wasn't very convenient.
+        I made a circuit using a LTC44122 IC for the power switchover and bought a CC CV buck converter for battery charging.
+        I've adjusted its output voltage a bit lower than the maximum 16.8V so it wouldn't overcharge the cells.
+        I also added legs to the case for better air intake.</p>
+        <img src="img/battery_charging.jpg" />
+        <img src="img/wall_charger.jpg" />
+    </body>
+</html>
