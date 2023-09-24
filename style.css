@@ -1,0 +1,30 @@
+body {
+  background-color: #232323;
+}
+
+.content {
+    margin: auto;
+    width: 50vw;
+    padding: 10px;
+    text-align: center;
+}
+
+.rainbow {
+    height: 10px;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    margin: 10px;
+}
+
+h1 {
+    color: #E9585B;
+    font-size: 64px;
+}
+
+a {
+color: hotpink;
+font-size 24px;
+}
+
+a:hover {
+color: green;
+}
