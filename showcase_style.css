@@ -1,0 +1,30 @@
+body {
+    background-color: #1E222A;
+    color: white;
+    text-align: center;
+}
+
+p {
+    word-wrap: break-word;
+    max-width: 40vw;
+    margin: 0 auto;
+    font-size: 1.2em;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+img {
+    width: 30vw;
+    height: auto;
+}
+
+@media only screen and (orientation: portrait) {
+    p {
+        max-width: 90vw;
+    }
+
+    img {
+        width: 90vw;
+    }
+}
+
